@@ -1,0 +1,5 @@
+account:
+  jid: user@domain
+  password: pass
+proxies:
+  proxy.jabberfr.org

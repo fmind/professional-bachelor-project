@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: MainFrame</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">MainFrame</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/lib/views/frames/MainFrame_rb.html">
+                lib/views/frames/MainFrame.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Wx::Frame
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+    <div id="diagram">
+      <map id="map" name="map">
+  <area shape="rect" coords="5,101,96,149"      href="MainFrame.html" alt="MainFrame" />
+  <area shape="rect" coords="8,5,93,53"      href="Wx/Frame.html" alt="Wx::Frame" />
+</map>
+<img src="../dot/f_11.png" usemap="#map" border="0" alt="dot/f_11.png">
+    </div>
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000159">change_status</a>&nbsp;&nbsp;
+      <a href="#M000152">create_account_box</a>&nbsp;&nbsp;
+      <a href="#M000151">create_menubar</a>&nbsp;&nbsp;
+      <a href="#M000153">create_notebook_box</a>&nbsp;&nbsp;
+      <a href="#M000154">create_statusbar</a>&nbsp;&nbsp;
+      <a href="#M000158">disconnect</a>&nbsp;&nbsp;
+      <a href="#M000156">display</a>&nbsp;&nbsp;
+      <a href="#M000155">link_events</a>&nbsp;&nbsp;
+      <a href="#M000149">new</a>&nbsp;&nbsp;
+      <a href="#M000157">pop_about</a>&nbsp;&nbsp;
+      <a href="#M000150">set_style</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000149" class="method-detail">
+        <a name="M000149"></a>
+
+        <div class="method-heading">
+          <a href="#M000149" class="method-signature">
+          <span class="method-name">new</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000149-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000149-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/views/frames/MainFrame.rb, line 3</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>()
+                <span class="ruby-keyword kw">super</span>(<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">:title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'Pr2pr'</span>, <span class="ruby-identifier">:size</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value">600</span>,<span class="ruby-value">600</span>])
+                <span class="ruby-ivar">@app</span> = <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-identifier">get_app</span>
+
+                <span class="ruby-identifier">set_style</span>()
+
+                <span class="ruby-identifier">create_menubar</span>()
+                <span class="ruby-identifier">create_account_box</span>()
+                <span class="ruby-identifier">create_notebook_box</span>()
+                <span class="ruby-identifier">create_statusbar</span>()
+
+                <span class="ruby-identifier">link_events</span>()
+
+                <span class="ruby-identifier">display</span>()
+        <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000159" class="method-detail">
+        <a name="M000159"></a>
+
+        <div class="method-heading">
+          <a href="#M000159" class="method-signature">
+          <span class="method-name">change_status</span><span class="method-args">(activity)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000159-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000159-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/views/frames/MainFrame.rb, line 156</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">change_status</span>(<span class="ruby-identifier">activity</span>)
+                <span class="ruby-ivar">@statusbar</span>.<span class="ruby-identifier">set_status_text</span>(<span class="ruby-identifier">activity</span>, <span class="ruby-value">0</span>)
+        <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000152" class="method-detail">
+        <a name="M000152"></a>
+
+        <div class="method-heading">
+          <a href="#M000152" class="method-signature">
+          <span class="method-name">create_account_box</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000152-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000152-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/views/frames/MainFrame.rb, line 52</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create_account_box</span>()
+                <span class="ruby-comment cmt"># Create the first part concerning the account</span>
+
+                <span class="ruby-comment cmt"># Title</span>
+                <span class="ruby-ivar">@account_title</span> = <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">BoxSizer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">VERTICAL</span>)
+
+                <span class="ruby-ivar">@label_account</span> = <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">StaticText</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">:label</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;My account&quot;</span>)
+                <span class="ruby-ivar">@label_account</span>.<span class="ruby-identifier">set_font</span>(<span class="ruby-ivar">@style</span>.<span class="ruby-identifier">h2</span>)
+                <span class="ruby-ivar">@label_account</span>.<span class="ruby-identifier">set_foreground_colour</span>(<span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">BLUE</span>)
+
+                <span class="ruby-ivar">@account_title</span>.<span class="ruby-identifier">add</span>(<span class="ruby-ivar">@label_account</span>, <span class="ruby-value">0</span>, <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">ALL</span>, <span class="ruby-value">10</span>)
+
+                <span class="ruby-ivar">@account_box</span> = <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">GridSizer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>, <span class="ruby-value">2</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>)
+                <span class="ruby-comment cmt"># First row : account</span>
+                <span class="ruby-ivar">@label_jid</span> = <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">StaticText</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">:label</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;Connected as : &quot;</span>)
+                <span class="ruby-ivar">@jid</span> = <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">StaticText</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">:label</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">accounts_controller</span>.<span class="ruby-identifier">jid</span>.<span class="ruby-identifier">to_s</span>)
+                <span class="ruby-ivar">@jid</span>.<span class="ruby-identifier">set_font</span>(<span class="ruby-ivar">@style</span>.<span class="ruby-identifier">bold</span>)
+
+                <span class="ruby-ivar">@account_box</span>.<span class="ruby-identifier">add</span>(<span class="ruby-ivar">@label_jid</span>, <span class="ruby-value">0</span>, <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">ALL</span><span class="ruby-operator">|</span><span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">ALIGN_CENTER_VERTICAL</span>, <span class="ruby-value">10</span>)
+                <span class="ruby-ivar">@account_box</span>.<span class="ruby-identifier">add</span>(<span class="ruby-ivar">@jid</span>, <span class="ruby-value">0</span>, <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">ALL</span>, <span class="ruby-value">10</span>)
+
+                <span class="ruby-comment cmt"># Second row : status (unused)</span>
+                <span class="ruby-ivar">@label_status</span> = <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">StaticText</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">:label</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;Status : &quot;</span>)
+                <span class="ruby-ivar">@status</span> = <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">StaticText</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">:label</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;Available&quot;</span>)
+                <span class="ruby-ivar">@status</span>.<span class="ruby-identifier">set_foreground_colour</span>(<span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">GREEN</span>)
+
+                <span class="ruby-ivar">@account_box</span>.<span class="ruby-identifier">add</span>(<span class="ruby-ivar">@label_status</span>, <span class="ruby-value">0</span>, <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">ALL</span><span class="ruby-operator">|</span><span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">ALIGN_CENTER_VERTICAL</span>, <span class="ruby-value">10</span>)
+                <span class="ruby-ivar">@account_box</span>.<span class="ruby-identifier">add</span>(<span class="ruby-ivar">@status</span>, <span class="ruby-value">0</span>, <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">ALL</span>, <span class="ruby-value">10</span>)
+        <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000151" class="method-detail">
+        <a name="M000151"></a>
+
+        <div class="method-heading">
+          <a href="#M000151" class="method-signature">
+          <span class="method-name">create_menubar</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000151-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000151-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/views/frames/MainFrame.rb, line 29</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create_menubar</span>()
+                <span class="ruby-comment cmt"># Create the menubar that permit to control the notebook (opening tabs)</span>
+                <span class="ruby-ivar">@menubar</span> = <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">MenuBar</span>.<span class="ruby-identifier">new</span>
+
+                <span class="ruby-ivar">@menubar_account</span> = <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">Menu</span>.<span class="ruby-identifier">new</span>
+                <span class="ruby-ivar">@id_disconnect</span> = <span class="ruby-ivar">@menubar_account</span>.<span class="ruby-identifier">append</span>(<span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">ID_ANY</span>, <span class="ruby-value str">&quot;Disconnect\tCtrl-D&quot;</span>, <span class="ruby-value str">&quot;Disconnect&quot;</span>)
+                <span class="ruby-ivar">@menubar_account</span>.<span class="ruby-identifier">append_separator</span>()
+                <span class="ruby-ivar">@menubar_account</span>.<span class="ruby-identifier">append</span>(<span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">ID_EXIT</span>, <span class="ruby-value str">&quot;Exit\tCtrl-Q&quot;</span>, <span class="ruby-value str">&quot;Close the program&quot;</span>)
+                <span class="ruby-ivar">@menubar</span>.<span class="ruby-identifier">append</span>(<span class="ruby-ivar">@menubar_account</span>, <span class="ruby-value str">&quot;&amp;Account&quot;</span>)
+
+                <span class="ruby-ivar">@menubar_view</span> = <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">Menu</span>.<span class="ruby-identifier">new</span>
+                <span class="ruby-ivar">@id_create_roster_page</span> = <span class="ruby-ivar">@menubar_view</span>.<span class="ruby-identifier">append</span>(<span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">ID_ANY</span>, <span class="ruby-value str">&quot;Display the roster\tCtrl-R&quot;</span>, <span class="ruby-value str">&quot;Display the roster page&quot;</span>)
+                <span class="ruby-ivar">@id_create_files_page</span> = <span class="ruby-ivar">@menubar_view</span>.<span class="ruby-identifier">append</span>(<span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">ID_ANY</span>, <span class="ruby-value str">&quot;Display files\tCtrl-F&quot;</span>, <span class="ruby-value str">&quot;Display the files page&quot;</span>)
+                <span class="ruby-ivar">@id_create_transfers_page</span> = <span class="ruby-ivar">@menubar_view</span>.<span class="ruby-identifier">append</span>(<span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">ID_ANY</span>, <span class="ruby-value str">&quot;Display transfers\tCtrl-T&quot;</span>, <span class="ruby-value str">&quot;Display the transfers page&quot;</span>)
+                <span class="ruby-ivar">@menubar</span>.<span class="ruby-identifier">append</span>(<span class="ruby-ivar">@menubar_view</span>, <span class="ruby-value str">&quot;&amp;View&quot;</span>)
+
+                <span class="ruby-ivar">@menubar_help</span> = <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">Menu</span>.<span class="ruby-identifier">new</span>
+                <span class="ruby-ivar">@menubar_help</span>.<span class="ruby-identifier">append</span>(<span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">ID_ABOUT</span>, <span class="ruby-value str">&quot;About\tF1&quot;</span>, <span class="ruby-value str">&quot;About&quot;</span>)
+                <span class="ruby-ivar">@menubar</span>.<span class="ruby-identifier">append</span>(<span class="ruby-ivar">@menubar_help</span>, <span class="ruby-value str">&quot;&amp;Help&quot;</span>)
+
+                <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">menu_bar</span> = <span class="ruby-ivar">@menubar</span>
+        <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000153" class="method-detail">
+        <a name="M000153"></a>
+
+        <div class="method-heading">
+          <a href="#M000153" class="method-signature">
+          <span class="method-name">create_notebook_box</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000153-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000153-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/views/frames/MainFrame.rb, line 82</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create_notebook_box</span>()
+                <span class="ruby-comment cmt"># Create the notebook that is the main part of the program</span>
+
+                <span class="ruby-comment cmt"># Title</span>
+                <span class="ruby-ivar">@notebook_title</span> = <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">BoxSizer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">VERTICAL</span>)
+
+                <span class="ruby-ivar">@label_notebook</span> = <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">StaticText</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">:label</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;Menu&quot;</span>)
+                <span class="ruby-ivar">@label_notebook</span>.<span class="ruby-identifier">set_font</span>(<span class="ruby-ivar">@style</span>.<span class="ruby-identifier">h2</span>)
+                <span class="ruby-ivar">@label_notebook</span>.<span class="ruby-identifier">set_foreground_colour</span>(<span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">BLUE</span>)
+
+                <span class="ruby-ivar">@notebook_title</span>.<span class="ruby-identifier">add</span>(<span class="ruby-ivar">@label_notebook</span>, <span class="ruby-value">0</span>, <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">ALL</span>, <span class="ruby-value">10</span>)
+
+                <span class="ruby-comment cmt"># The notebook by itself</span>
+                <span class="ruby-ivar">@notebook</span> = <span class="ruby-constant">MenuNotebook</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>)
+        <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000154" class="method-detail">
+        <a name="M000154"></a>
+
+        <div class="method-heading">
+          <a href="#M000154" class="method-signature">
+          <span class="method-name">create_statusbar</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000154-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000154-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/views/frames/MainFrame.rb, line 98</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create_statusbar</span>()
+                <span class="ruby-comment cmt"># Create the bottom bar used to display upload/download activities</span>
+                <span class="ruby-ivar">@statusbar</span> = <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">StatusBar</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value">-1</span>)
+                <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">set_status_bar</span>(<span class="ruby-ivar">@statusbar</span>)
+        <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000158" class="method-detail">
+        <a name="M000158"></a>
+
+        <div class="method-heading">
+          <a href="#M000158" class="method-signature">
+          <span class="method-name">disconnect</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000158-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000158-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/views/frames/MainFrame.rb, line 152</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">disconnect</span>()
+                <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">accounts_controller</span>.<span class="ruby-identifier">disconnect</span>()
+        <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000156" class="method-detail">
+        <a name="M000156"></a>
+
+        <div class="method-heading">
+          <a href="#M000156" class="method-signature">
+          <span class="method-name">display</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000156-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000156-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/views/frames/MainFrame.rb, line 129</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">display</span>()
+                <span class="ruby-identifier">centre</span>()
+
+                <span class="ruby-ivar">@box</span> = <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">BoxSizer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">VERTICAL</span>)
+                <span class="ruby-ivar">@box</span>.<span class="ruby-identifier">add</span>(<span class="ruby-ivar">@account_title</span>, <span class="ruby-value">0</span>, <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">EXPAND</span>)
+                <span class="ruby-ivar">@box</span>.<span class="ruby-identifier">add</span>(<span class="ruby-ivar">@account_box</span>, <span class="ruby-value">0</span>, <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">EXPAND</span>)
+                <span class="ruby-ivar">@box</span>.<span class="ruby-identifier">add</span>(<span class="ruby-ivar">@notebook_title</span>, <span class="ruby-value">0</span>, <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">EXPAND</span>)
+                <span class="ruby-ivar">@box</span>.<span class="ruby-identifier">add</span>(<span class="ruby-ivar">@notebook</span>, <span class="ruby-value">1</span>, <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">EXPAND</span>)
+                <span class="ruby-identifier">set_sizer</span>(<span class="ruby-ivar">@box</span>)
+        <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000155" class="method-detail">
+        <a name="M000155"></a>
+
+        <div class="method-heading">
+          <a href="#M000155" class="method-signature">
+          <span class="method-name">link_events</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000155-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000155-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/views/frames/MainFrame.rb, line 104</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">link_events</span>()
+                <span class="ruby-identifier">evt_menu</span>(<span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">ID_ABOUT</span>) { <span class="ruby-identifier">pop_about</span>() }
+                <span class="ruby-identifier">evt_menu</span>(<span class="ruby-ivar">@id_disconnect</span>) { <span class="ruby-identifier">disconnect</span>() }
+                <span class="ruby-identifier">evt_menu</span>(<span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">ID_EXIT</span>, <span class="ruby-identifier">:destroy</span>)
+
+                <span class="ruby-identifier">evt_menu</span>(<span class="ruby-ivar">@id_create_roster_page</span>) <span class="ruby-keyword kw">do</span>
+                        <span class="ruby-ivar">@notebook</span>.<span class="ruby-identifier">create_roster_page</span>()
+                        <span class="ruby-ivar">@notebook</span>.<span class="ruby-identifier">roster_page</span>.<span class="ruby-identifier">refresh</span>()
+                <span class="ruby-keyword kw">end</span>
+
+                <span class="ruby-identifier">evt_menu</span>(<span class="ruby-ivar">@id_create_files_page</span>) <span class="ruby-keyword kw">do</span>
+                        <span class="ruby-ivar">@notebook</span>.<span class="ruby-identifier">create_files_page</span>()
+                        <span class="ruby-ivar">@notebook</span>.<span class="ruby-identifier">files_page</span>.<span class="ruby-identifier">refresh</span>()
+                <span class="ruby-keyword kw">end</span>
+
+                <span class="ruby-identifier">evt_menu</span>(<span class="ruby-ivar">@id_create_transfers_page</span>) <span class="ruby-keyword kw">do</span>
+                        <span class="ruby-ivar">@notebook</span>.<span class="ruby-identifier">create_transfers_page</span>()
+                        <span class="ruby-ivar">@notebook</span>.<span class="ruby-identifier">transfers_page</span>.<span class="ruby-identifier">refresh</span>()
+                <span class="ruby-keyword kw">end</span>
+
+                <span class="ruby-ivar">@timer</span> = <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">Timer</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword kw">self</span>
+                <span class="ruby-identifier">evt_timer</span>(<span class="ruby-ivar">@timer</span>.<span class="ruby-identifier">id</span>) { <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">pass</span> }
+                <span class="ruby-ivar">@timer</span>.<span class="ruby-identifier">start</span>(<span class="ruby-value">2</span>)
+        <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000157" class="method-detail">
+        <a name="M000157"></a>
+
+        <div class="method-heading">
+          <a href="#M000157" class="method-signature">
+          <span class="method-name">pop_about</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000157-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000157-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/views/frames/MainFrame.rb, line 140</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pop_about</span>()
+                <span class="ruby-comment cmt"># Show the &quot;About&quot; popup</span>
+                <span class="ruby-ivar">@popup_about</span> = <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">AboutDialogInfo</span>.<span class="ruby-identifier">new</span>()
+                <span class="ruby-ivar">@popup_about</span>.<span class="ruby-identifier">set_name</span>(<span class="ruby-value str">'Pr2pr'</span>)
+                <span class="ruby-ivar">@popup_about</span>.<span class="ruby-identifier">set_version</span>(<span class="ruby-value str">'1.0.0'</span>)
+                <span class="ruby-ivar">@popup_about</span>.<span class="ruby-identifier">add_developer</span>(<span class="ruby-value str">'Médéric Hurier'</span>)
+                <span class="ruby-ivar">@popup_about</span>.<span class="ruby-identifier">add_developer</span>(<span class="ruby-value str">'Sylvain Dubus'</span>)
+                <span class="ruby-ivar">@popup_about</span>.<span class="ruby-identifier">set_web_site</span>(<span class="ruby-value str">'http://freaxmind.hd.free.fr/projects/projects/pr2pr'</span>)
+
+                <span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-identifier">about_box</span>(<span class="ruby-ivar">@popup_about</span>)
+        <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000150" class="method-detail">
+        <a name="M000150"></a>
+
+        <div class="method-heading">
+          <a href="#M000150" class="method-signature">
+          <span class="method-name">set_style</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000150-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000150-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/views/frames/MainFrame.rb, line 19</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_style</span>()
+                <span class="ruby-comment cmt"># Set a minimum and a maximum size for the frame and force the color to white</span>
+                <span class="ruby-ivar">@style</span> = <span class="ruby-constant">Style</span>.<span class="ruby-identifier">new</span>()
+
+                <span class="ruby-identifier">set_min_size</span>(<span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">Size</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">400</span>, <span class="ruby-value">600</span>))
+                <span class="ruby-identifier">set_max_size</span>(<span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">Size</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">800</span>, <span class="ruby-value">600</span>))
+
+                <span class="ruby-identifier">set_background_colour</span>(<span class="ruby-constant">Wx</span><span class="ruby-operator">::</span><span class="ruby-constant">WHITE</span>)
+        <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

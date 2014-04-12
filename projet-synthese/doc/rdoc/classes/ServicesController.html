@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: ServicesController</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">ServicesController</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/lib/controllers/services_controller_rb.html">
+                lib/controllers/services_controller.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="Controller.html">
+                Controller
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+    <div id="diagram">
+      <map id="map" name="map">
+  <area shape="rect" coords="5,101,133,149"      href="ServicesController.html" alt="ServicesController" />
+  <area shape="rect" coords="29,5,109,53"      href="Controller.html" alt="Controller" />
+</map>
+<img src="../dot/f_21.png" usemap="#map" border="0" alt="dot/f_21.png">
+    </div>
+
+    <div id="description">
+      <p>
+Give information about a Jabber node (client, server, service)
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000051">available?</a>&nbsp;&nbsp;
+      <a href="#M000048">has_proxy?</a>&nbsp;&nbsp;
+      <a href="#M000049">has_pubsub?</a>&nbsp;&nbsp;
+      <a href="#M000050">stream=</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">stream</td>
+          <td class="context-item-value">&nbsp;[W]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000051" class="method-detail">
+        <a name="M000051"></a>
+
+        <div class="method-heading">
+          <a href="#M000051" class="method-signature">
+          <span class="method-name">available?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Test if this controller is ready
+</p>
+<table>
+<tr><td valign="top"><b><em>return</em></b>:</td><td>True if the controller is ready
+
+</td></tr>
+</table>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000051-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000051-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/controllers/services_controller.rb, line 56</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">available?</span>
+    (<span class="ruby-ivar">@stream</span>)<span class="ruby-operator">?</span> <span class="ruby-keyword kw">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">false</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000048" class="method-detail">
+        <a name="M000048"></a>
+
+        <div class="method-heading">
+          <a href="#M000048" class="method-signature">
+          <span class="method-name">has_proxy?</span><span class="method-args">(jid)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Test if a server has a proxy
+</p>
+<table>
+<tr><td valign="top"><b>jid</b>:</td><td>The server JID
+
+</td></tr>
+<tr><td valign="top"><b><em>return</em></b>:</td><td>True if the server has a proxy
+
+</td></tr>
+</table>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000048-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000048-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/controllers/services_controller.rb, line 10</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">has_proxy?</span>(<span class="ruby-identifier">jid</span>)
+    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">available?</span>
+
+    <span class="ruby-constant">Log4r</span><span class="ruby-operator">::</span><span class="ruby-constant">Logger</span>[<span class="ruby-value str">'app'</span>].<span class="ruby-identifier">info</span> <span class="ruby-node">&quot;Query if #{jid} server has a proxy&quot;</span>
+
+    <span class="ruby-identifier">items</span> = <span class="ruby-ivar">@discoverer</span>.<span class="ruby-identifier">get_items_for</span> <span class="ruby-identifier">jid</span>.<span class="ruby-identifier">domain</span>
+    <span class="ruby-identifier">items</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">item</span>.<span class="ruby-identifier">jid</span>.<span class="ruby-identifier">domain</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">item</span>.<span class="ruby-identifier">jid</span>.<span class="ruby-identifier">domain</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^proxy/</span>
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-keyword kw">false</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000049" class="method-detail">
+        <a name="M000049"></a>
+
+        <div class="method-heading">
+          <a href="#M000049" class="method-signature">
+          <span class="method-name">has_pubsub?</span><span class="method-args">(jid)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Test if a server has a pubsub server
+</p>
+<table>
+<tr><td valign="top"><b>jid</b>:</td><td>The server JID
+
+</td></tr>
+<tr><td valign="top"><b><em>return</em></b>:</td><td>True if the server has a pubsub service
+
+</td></tr>
+</table>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000049-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000049-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/controllers/services_controller.rb, line 27</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">has_pubsub?</span>(<span class="ruby-identifier">jid</span>)
+    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">available?</span>
+
+    <span class="ruby-constant">Log4r</span><span class="ruby-operator">::</span><span class="ruby-constant">Logger</span>[<span class="ruby-value str">'app'</span>].<span class="ruby-identifier">info</span> <span class="ruby-node">&quot;Query if #{jid} server has a pubsub&quot;</span>
+
+    <span class="ruby-identifier">items</span> = <span class="ruby-ivar">@discoverer</span>.<span class="ruby-identifier">get_items_for</span> <span class="ruby-identifier">jid</span>.<span class="ruby-identifier">domain</span>
+    <span class="ruby-identifier">items</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">item</span>.<span class="ruby-identifier">jid</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">item</span>.<span class="ruby-identifier">jid</span>.<span class="ruby-identifier">domain</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^pubsub/</span>
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-keyword kw">false</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000050" class="method-detail">
+        <a name="M000050"></a>
+
+        <div class="method-heading">
+          <a href="#M000050" class="method-signature">
+          <span class="method-name">stream=</span><span class="method-args">(stream)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set the stream of this controller
+</p>
+<table>
+<tr><td valign="top"><b>stream</b>:</td><td>A Jabber::Client to use
+
+</td></tr>
+</table>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000050-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000050-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/controllers/services_controller.rb, line 43</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stream=</span>(<span class="ruby-identifier">stream</span>)
+    <span class="ruby-ivar">@stream</span> = <span class="ruby-identifier">stream</span>
+
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">available?</span>
+      <span class="ruby-ivar">@discoverer</span> = <span class="ruby-constant">Jabber</span><span class="ruby-operator">::</span><span class="ruby-constant">Discovery</span><span class="ruby-operator">::</span><span class="ruby-constant">Helper</span>.<span class="ruby-identifier">new</span> <span class="ruby-ivar">@stream</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-ivar">@discoverer</span> = <span class="ruby-keyword kw">nil</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

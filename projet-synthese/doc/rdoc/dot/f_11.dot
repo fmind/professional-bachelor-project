@@ -1,0 +1,32 @@
+digraph TopLevel {
+    compound = true
+    bgcolor = lightcyan1
+    fontname = Arial
+    fontsize = 8
+    label = "TopLevel"
+    node [
+        fontname = Arial,
+        fontsize = 8,
+        color = black
+    ]
+
+    MainFrame [
+        fontcolor = black,
+        URL = "classes/MainFrame.html",
+        shape = ellipse,
+        color = palegoldenrod,
+        style = filled,
+        label = "MainFrame"
+    ]
+
+    Wx__Frame [
+        URL = "classes/Wx/Frame.html",
+        label = "Wx::Frame"
+    ]
+
+    Wx__Frame -> MainFrame [
+
+    ]
+
+}
+

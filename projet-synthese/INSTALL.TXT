@@ -1,0 +1,39 @@
+Structure du projet:
+
+- conf: Configuration de l'application. Par défaut, pas besoin de modifier les fichiers 
+- database: Les fichiers de base de données propre à chaque utilisateur (format .pstore)
+- doc: Documentations du projets contenant le diagramme de gantt, le cahier des charges(html/odt), le rapport(odt/html), la documentation technique (dossier rdoc), les diagrammes uml (format png et .xml pour umbrello)
+- downloads: Les fichiers téléchargés seront placés dans ce dossier
+- lib: Code source de l'application
+- log: Fichier de log suivant l'activité et contenant les erreurs
+- public: Contient des images
+- report: Contient un fichier tests.html montrant l'état des tests, et un dossier coverage avec un fichier index.html pour la couverture des tests
+- spec: fichiers de test
+
+Installation:
+
+L'application ne demande pas d'installation, mais l'installation de ruby et de plusieurs bibliothèques est indispensable. Cette partie détail l'installation.
+
+Sous Windows: 
+
+Pour installer Ruby, allez sur le site: http://rubyinstaller.org/download.html et téléchargez ruby en version 1.87. Installer le ensuite en séléctionnant les options lors de l'installation.
+Pour installer les bibliothèques, lancer une commande cmd.exe et taper:
+gem install wxruby xmpp4r log4r require_all rake diff-lcs rspec rcov
+
+Pour lancer l'application, double cliquez sur Pr2Pr.rbw
+
+Sous Linux:
+
+Pour utiliser l'application sous linux, il faut installer les paquets relatifs à la distribution. Cela dépend de votre système, mais voila les paquets que vous devez rechercher:
+- ruby, wxwidgets, rubygems
+
+Pour installer les bibliothèques, lancer la commande: 
+gem install xmpp4r log4r require_all rake diff-lcs rspec rcov
+
+gem install wxruby xmpp4r log4r require_all rake diff-lcs rspec rcov
+Pour installer wxruby, il faut une version propre à la distribution. Nous proposons des paquets déjà fait sur le site http://freaxmind.hd.free.fr/projects/projects/pr2pr/files pour ubuntu 9.10 en version 32bit et 64bit et fedora 12 version 64 bit. Pour d'autres distributions, les étapes d'installation sont plus délicates et vous pouvez me contacter pour avoir plus d'informations.
+Si vous êtes courageux, la procédure est mise sur mon site à l'adresse: http://freaxmind.hd.free.fr/blog/2010/01/14/installation-et-compilation-de-wxruby
+
+Lancer ensuite l'application avec Pr2Pr.rb en double cliquant dessus
+
+Pour tous problèmes, vous pouvez me contacter à l'adresse: freaxmind@gmail.com

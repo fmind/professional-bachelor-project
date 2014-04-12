@@ -1,0 +1,5 @@
+account:
+  jid: account@domain.com
+  password: azerty
+log:
+  file: conf/log.yml

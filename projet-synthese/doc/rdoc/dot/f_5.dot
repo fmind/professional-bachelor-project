@@ -1,0 +1,63 @@
+digraph TopLevel {
+    compound = true
+    bgcolor = lightcyan1
+    fontname = Arial
+    fontsize = 8
+    label = "TopLevel"
+    node [
+        fontname = Arial,
+        fontsize = 8,
+        color = black
+    ]
+
+    QueryContactFiles [
+        fontcolor = black,
+        URL = "classes/QueryContactFiles.html",
+        shape = ellipse,
+        color = palegoldenrod,
+        style = filled,
+        label = "QueryContactFiles"
+    ]
+
+    IqResContactFiles [
+        fontcolor = black,
+        URL = "classes/IqResContactFiles.html",
+        shape = ellipse,
+        color = palegoldenrod,
+        style = filled,
+        label = "IqResContactFiles"
+    ]
+
+    IqContactFiles [
+        fontcolor = black,
+        URL = "classes/IqContactFiles.html",
+        shape = ellipse,
+        color = palegoldenrod,
+        style = filled,
+        label = "IqContactFiles"
+    ]
+
+    Jabber__IqQuery [
+        URL = "classes/Jabber/IqQuery.html",
+        label = "Jabber::IqQuery"
+    ]
+
+    Jabber__IqQuery -> QueryContactFiles [
+
+    ]
+
+    Jabber__Iq [
+        URL = "classes/Jabber/Iq.html",
+        label = "Jabber::Iq"
+    ]
+
+    Jabber__Iq -> IqResContactFiles [
+
+    ]
+
+    Jabber__Iq -> IqContactFiles [
+
+    ]
+
+}
+

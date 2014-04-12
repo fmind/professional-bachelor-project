@@ -1,0 +1,32 @@
+digraph TopLevel {
+    compound = true
+    bgcolor = lightcyan1
+    fontname = Arial
+    fontsize = 8
+    label = "TopLevel"
+    node [
+        fontname = Arial,
+        fontsize = 8,
+        color = black
+    ]
+
+    CollectionController [
+        fontcolor = black,
+        URL = "classes/CollectionController.html",
+        shape = ellipse,
+        color = palegoldenrod,
+        style = filled,
+        label = "CollectionController"
+    ]
+
+    Controller [
+        URL = "classes/Controller.html",
+        label = "Controller"
+    ]
+
+    Controller -> CollectionController [
+
+    ]
+
+}
+

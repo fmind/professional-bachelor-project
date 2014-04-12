@@ -1,0 +1,37 @@
+log4r_config:
+  pre_config:
+    custom_levels:
+      - DEBUG
+      - INFO
+      - WARNING
+      - ERROR
+      - FATAL
+    global:
+      level: DEBUG
+    root:
+      level: DEBUG
+
+  loggers:
+    - name      : app
+      outputters:
+        - stderr
+        - file
+
+  outputters:
+    - type     : StderrOutputter
+      name     : stderr
+      level    : FATAL
+      formatter:
+        date_pattern: '%H:%M:%S'
+        pattern     : '[%l] %d = %m'
+        type        : PatternFormatter
+
+    - type        : FileOutputter
+      name        : file
+      level       : INFO
+      filename     : "#{LOG_DIR}/app.log"
+      trunc       : 'true'
+      formatter   :
+        date_pattern: '%H:%M:%S'
+        pattern     : '[%l] %d = %m'
+        type        : PatternFormatter

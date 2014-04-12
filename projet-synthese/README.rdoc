@@ -1,0 +1,39 @@
+= Pr2pr: Share with friends
+
+* {Project home}[http://freaxmind.hd.free.fr/projects/projects/pr2pr]
+
+== DESCRIPTION:
+
+Pr2pr is a peer to peer application for end user to help them to share their files easily. It's based on XMPP and Jabber, so you can use your Jabber account.
+
+== FEATURES:
+
+* Manage jabber account
+* Manage contacts and groups
+* Manage your file file collection
+* Manage file downloads and uploads
+
+== REQUIREMENTS:
+
+You need these ruby libraries to run the programm:
+* ruby 1.8
+* rubygems
+* rdoc
+* wxruby
+* xmpp4r
+* log4r
+* rspec
+* require_all
+* rake
+
+You need also these programs on your operating system:
+* wxwidgets
+* graphviz (for development only)
+
+
+== LICENSE:
+
+Copyright (c) 2008 - 2009:
+
+* {Hurier Mederic}[http://freaxmind.hd.free.fr]
+* Sylvain Dubus

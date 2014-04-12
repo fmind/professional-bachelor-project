@@ -1,0 +1,32 @@
+digraph TopLevel {
+    compound = true
+    bgcolor = lightcyan1
+    fontname = Arial
+    fontsize = 8
+    label = "TopLevel"
+    node [
+        fontname = Arial,
+        fontsize = 8,
+        color = black
+    ]
+
+    Upload [
+        fontcolor = black,
+        URL = "classes/Upload.html",
+        shape = ellipse,
+        color = palegoldenrod,
+        style = filled,
+        label = "Upload"
+    ]
+
+    Transfer [
+        URL = "classes/Transfer.html",
+        label = "Transfer"
+    ]
+
+    Transfer -> Upload [
+
+    ]
+
+}
+

@@ -1,0 +1,10 @@
+account:
+  jid: user@domain
+  password: pass
+
+  friend_user: user@domain
+  friends0_user: user@domain
+  new_user: user@domain
+  fake_user: user@domain
+proxies:
+  proxy.server.org
