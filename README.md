@@ -1,4 +1,5 @@
-bdise-l3
-========
+# License Professionnelle: Base de Données, Internet et Sécurité (Fontainebleau)
 
-School Projects from 2009 to 2010
+This repository includes the following projects:
+
+__project-synthese__: a decentralised file-sharing application over the XMPP protocol (Ruby, WxWidgets)
